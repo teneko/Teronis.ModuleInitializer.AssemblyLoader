@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teronis.ModuleInitializer.AssemblyLoader", "src\0\src\Teronis.ModuleInitializer.AssemblyLoader.csproj", "{2C3F17E4-8CE4-427E-8536-1D72B28F9064}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teronis.ModuleInitializer.AssemblyLoader.Executable", "src\0.Executable\src\Teronis.ModuleInitializer.AssemblyLoader.Executable.csproj", "{2D7ABF5F-A6F3-41F2-8018-EBFBE0DE5C9D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teronis.ModuleInitializer.AssemblyLoader.Executable~ExecutablePackage", "src\0.Executable\ref\ExecutablePackage\Teronis.ModuleInitializer.AssemblyLoader.Executable~ExecutablePackage.csproj", "{400EDC6C-FBB1-4996-90A8-06AA60996985}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teronis.ModuleInitializer.AssemblyLoader.MSBuild", "src\0.MSBuild\src\Teronis.ModuleInitializer.AssemblyLoader.MSBuild.csproj", "{D39EAA52-6741-4608-8E60-92415B9595CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A465C987-9B46-49D8-B432-2582AAF1B23F}"
+	ProjectSection(SolutionItems) = preProject
+		Teronis.ModuleInitializer.AssemblyLoader.sln.licenseheader = Teronis.ModuleInitializer.AssemblyLoader.sln.licenseheader
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C3F17E4-8CE4-427E-8536-1D72B28F9064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C3F17E4-8CE4-427E-8536-1D72B28F9064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C3F17E4-8CE4-427E-8536-1D72B28F9064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C3F17E4-8CE4-427E-8536-1D72B28F9064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D7ABF5F-A6F3-41F2-8018-EBFBE0DE5C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D7ABF5F-A6F3-41F2-8018-EBFBE0DE5C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D7ABF5F-A6F3-41F2-8018-EBFBE0DE5C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D7ABF5F-A6F3-41F2-8018-EBFBE0DE5C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{400EDC6C-FBB1-4996-90A8-06AA60996985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{400EDC6C-FBB1-4996-90A8-06AA60996985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{400EDC6C-FBB1-4996-90A8-06AA60996985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{400EDC6C-FBB1-4996-90A8-06AA60996985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D39EAA52-6741-4608-8E60-92415B9595CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D39EAA52-6741-4608-8E60-92415B9595CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D39EAA52-6741-4608-8E60-92415B9595CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D39EAA52-6741-4608-8E60-92415B9595CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B751D74-CFCF-489E-9E08-D3A53C2011DE}
+	EndGlobalSection
+EndGlobal
