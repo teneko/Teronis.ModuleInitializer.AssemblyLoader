@@ -11,6 +11,10 @@
 
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.8.0" />
+    <PackageReference Include="Teronis.MSBuild.Packaging.GitVersionCache" Version="0.1.8-alpha.219">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Teronis.MSBuild.Packaging.Pack" Version="0.1.8-alpha.219">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -29,5 +33,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+
+  <!-- PROPS -->
+  
+  <PropertyGroup>
+    <ProjectBuildInPackageVerbosity>detailed</ProjectBuildInPackageVerbosity>
+    <!-- The package name and package version are inherited from project specified in PackageSourceReference. -->
+    <PackSourceWhenPackingPublishTypedProjectMSBuildProperties>$(PackSourceWhenPackingPublishTypedProjectMSBuildProperties);DisableGitVersionCache=true</PackSourceWhenPackingPublishTypedProjectMSBuildProperties>
+  </PropertyGroup>
+
+  <!-- 
+    Belongs to Teronis.MSBuild.Pacakging.PackExecutable
+   -->
+  <PropertyGroup>
+    <!-- The individual path for every project. -->
+    <PublishPackageOutputPath>$(PackagePublishmentsDirectory)$(MSBuildProjectName)</PublishPackageOutputPath>
+    <BeforeCollectPackageSourceContextualPackagePackRelatedProperties>GetVersionCacheWhenGettingPackageTypedExecutableSourceProperties;$(BeforeCollectPackageSourceContextualPackagePackRelatedProperties)</BeforeCollectPackageSourceContextualPackagePackRelatedProperties>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageSourceSyntheticProjectMSBuildProperties>$(PackageSourceSyntheticProjectMSBuildProperties);DisableGitVersionCache=true</PackageSourceSyntheticProjectMSBuildProperties>
+  </PropertyGroup>
+
+  <!-- TARGETS -->
+  
+  <!--
+  ================================================================
+  GetVersionCacheWhenGettingPackageTypedExecutableSourceProperties
+  
+  Invokes GetVersionCache, so its evaluation is regarded when
+  packing executable source project.
+  ================================================================
+  -->
+  <Target Name="GetVersionCacheWhenGettingPackageTypedExecutableSourceProperties" DependsOnTargets="GetVersionCache" Condition="'$(ParentIsExecutablePackageTyped)' == 'true'" />
   
 </Project>

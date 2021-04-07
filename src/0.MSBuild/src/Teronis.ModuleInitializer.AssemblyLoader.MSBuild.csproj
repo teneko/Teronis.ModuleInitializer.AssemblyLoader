@@ -30,5 +30,12 @@
     </None>
 
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Teronis.MSBuild.Packaging.GitVersionCache" Version="0.1.8-alpha.219">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
   
 </Project>

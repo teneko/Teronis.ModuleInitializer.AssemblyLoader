@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Copyright (c) Teroneko.
+Licensed under the MIT license. See LICENSE file in the project root for full license information.
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <PackageDescription Condition="'$(PackageDescription)' == '' And '$(Description)' != ''">$(Description)</PackageDescription>
+  </PropertyGroup>
+
+  <!-- LINKS SOURCE CODE TO CODE UPLOADED TO GITHUB -->
+
+  <ItemGroup>
+
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0"
+      PrivateAssets="All"
+      Conditions="'$(DisableGitVersionCache)' != 'true' And $(IsPackable)" />
+    
+  </ItemGroup>
+
+  <Target Name="_DirectoryBuildBeforeClean" BeforeTargets="BeforeClean">
+    <PropertyGroup>
+      <DisableGitVersionCache>true</DisableGitVersionCache>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="_DirectoryBuildAfterClean" BeforeTargets="AfterClean">
+    <PropertyGroup>
+      <DisableGitVersionCache>false</DisableGitVersionCache>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="AfterUnpackAsExecutablePackedProject" BeforeTargets="PackSourceWhenPackingPublishTypedProject">
+    <PropertyGroup>
+      <DisableGitVersionCache>true</DisableGitVersionCache>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="AfterUnpackAsExecutablePackedProject" AfterTargets="PackSourceWhenPackingPublishTypedProject">
+    <PropertyGroup>
+      <DisableGitVersionCache>false</DisableGitVersionCache>
+    </PropertyGroup>
+  </Target>
+
+</Project>

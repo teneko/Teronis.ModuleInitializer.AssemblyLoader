@@ -14,7 +14,6 @@ inherits package name and package version from referenced project.
     <TargetFramework>netstandard1.0</TargetFramework>
     <PackSourceAs>ExecutablePackage</PackSourceAs>
     <PackageSourceReference>..\..\src\Teronis.ModuleInitializer.AssemblyLoader.Executable.csproj</PackageSourceReference>
-    <IsPackable>true</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,7 +21,10 @@ inherits package name and package version from referenced project.
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Teronis.MSBuild.Packaging.Pack" Version="0.1.8-alpha.45" />
+    <PackageReference Include="Teronis.MSBuild.Packaging.Pack" Version="0.1.8-alpha.219">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
